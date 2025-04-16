@@ -18,7 +18,7 @@ Event Lens provides a structured, searchable, and visually clean reference for c
 
 ## Features
 
-- Clean UI built with HTML, CSS, and JavaScript
+- Clean UI built with HTML, Tailwind CSS, and JavaScript
 - Categorized and color-coded event severity (High, Medium, Low)
 - Real-time search highlighting for quick filtering
 - Covers essential event IDs for:

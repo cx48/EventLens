@@ -2,20 +2,6 @@
 
 Event Lens provides a structured, searchable, and visually clean reference for critical Windows Security Event IDs. Helpful for blue teams and security analysts to quickly look up relevant log IDs along with severity and descriptions
 
-## Preview
-
-#### Home Page
-![Home Page](screenshots/home-page.png)
-
-#### Search Filter
-![Search Filter](screenshots/search-filter.png)
-
-#### SIEM Queries (More can be added manually)
-![SIEM](screenshots/siem-query-examples.png)
-
-#### More Resources
-![More Resources](screenshots/more-resources.png)
-
 ## Features
 
 - Clean UI built with HTML, Tailwind CSS, and JavaScript
@@ -43,9 +29,19 @@ Event Lens provides a structured, searchable, and visually clean reference for c
 
 ```
 
-Here's an updated **Credits** section for your `README.md` with proper acknowledgment of all key resources:
+## Preview
 
----
+#### Home Page
+![Home Page](screenshots/home-page.png)
+
+#### Search Filter
+![Search Filter](screenshots/search-filter.png)
+
+#### SIEM Queries (More can be added manually)
+![SIEM](screenshots/siem-query-examples.png)
+
+#### More Resources
+![More Resources](screenshots/more-resources.png)
 
 ## Credits
 
@@ -58,3 +54,4 @@ This project was developed with inspiration and references from many security re
   High-quality educational content on Windows event analysis, forensic workflows, and threat hunting
 
 > This project was heavily inspired by the Windows Event Log Cheatsheet from 13Cubed
+

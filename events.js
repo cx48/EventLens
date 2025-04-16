@@ -2,7 +2,7 @@ const securityEvents = [
     {id: 4100, title: "PowerShell Engine Error", description: "An error occurred in the PowerShell engine. Could be due to script execution failures or policy restrictions.", severity: "medium"},
     {id: 4103, title: "PowerShell Module Logging", description: "Captures information about the loading and unloading of PowerShell modules. Useful for detecting unauthorized module usage.", severity: "medium"},
     {id: 4104, title: "PowerShell Script Block Logging", description: "Logs the execution of PowerShell script blocks. Contains the contents of the invoked commands.", severity: "high"},
-    {id: 4624, title: "Successful Logon", description: "An account was successfully logged on. Logon Type 10 indicates a Remote Interactive (RDP) logon.", severity: "medium"},
+    {id: 4624, title: "Successful Logon", description: "An account was successfully logged on. Remember to check Logon Type. For ex, Logon Type 10 indicates a Remote Interactive (RDP) logon.", severity: "medium"},
     {id: 4625, title: "Failed Logon", description: "An account failed to log on. Multiple failed attempts may indicate a brute-force attack.", severity: "high"},
     {id: 4634, title: "Account Logoff", description: "An account was logged off. Useful for tracking session durations.", severity: "low"},
     {id: 4648, title: "Logon with Explicit Credentials", description: "A logon was attempted using explicit credentials. May indicate credential theft or pass-the-hash attacks.", severity: "high"},

@@ -8,7 +8,7 @@ Event Lens provides a structured, searchable, and visually clean reference for c
 ![Home Page](screenshots/home-page.png)
 
 #### Search Filter
-![Search Filter](screenshots/search-feature.png)
+![Search Filter](screenshots/search-filter.png)
 
 #### SIEM Queries (More can be added manually)
 ![SIEM](screenshots/siem-query-examples.png)
@@ -53,9 +53,6 @@ This project was developed with inspiration and references from many security re
 
 - **[Microsoft Security Documentation](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-security-audit-events)**  
   Comprehensive details on Windows Security Audit Events and Event ID explanations
-
-- **[SANS Blue Team Tools & Cheatsheets](https://www.sans.org/blue-team/)**  
-  For SIEM query examples and extra tips mentioned on the page
 
 - **[13Cubed – Security Investigations & Deep Dives](https://www.youtube.com/c/13Cubed)**  
   High-quality educational content on Windows event analysis, forensic workflows, and threat hunting

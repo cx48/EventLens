@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Lens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Event Lens</h1>
+            <p class="text-xl text-gray-600">Important Windows Event Log IDs, Sysmon Event IDs and Logon Types for security monitoring</p>
+            
+            <div class="mt-8 max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Search for event IDs, logon types, or descriptions..." 
+                           class="w-full px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm bg-white">
+                    <button class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="section-card p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-shield-alt text-blue-500 mr-3"></i> Windows Security Event Logs
+                </h2>
+                <p class="text-gray-600 mb-4">Critical security-related event IDs from the Windows Security event log (Event ID range: 4600-7200)</p>
+                
+                <div class="space-y-4" id="securityLogs">
+                    <!-- Security logs will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="section-card p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-eye text-purple-500 mr-3"></i> Sysmon Event Logs
+                </h2>
+                <p class="text-gray-600 mb-4">Important event IDs from Sysmon (System Monitor), a Windows system service that provides detailed logging</p>
+                
+                <div class="space-y-4" id="sysmonLogs">
+                    <!-- Sysmon logs will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <div class="section-card p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i> Critical System Events
+                </h2>
+                <p class="text-gray-600 mb-4">Important system event IDs (20-4400) that may indicate security issues</p>
+                
+                <div class="space-y-4" id="systemLogs">
+                    <!-- System logs will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="section-card p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-key text-green-500 mr-3"></i> Logon Type Codes
+                </h2>
+                <p class="text-gray-600 mb-4">Understanding logon types helps identify how accounts are accessing systems (referenced in Event ID 4624)</p>
+                
+                <div class="space-y-3" id="logonTypes">
+                    <!-- Logon types will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="section-card p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-tags text-indigo-500 mr-3"></i> Event Sources & Providers
+                </h2>
+                <p class="text-gray-600 mb-4">Key Windows event providers that generate security-relevant logs</p>
+                
+                <div class="space-y-4" id="eventProviders">
+                    <!-- Event providers will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-plus-circle text-green-500 mr-3"></i> More Event IDs
+            </h2>
+            
+            <div class="prose max-w-none">
+                <h3 class="text-xl font-medium text-gray-700">Finding Important Security Event Log Codes</h3>
+                <p class="text-gray-600">To find additional important security event log codes:</p>
+                <ol class="list-decimal pl-5 space-y-2 text-gray-600">
+                    <li>Consult the <strong>SANS Institute</strong> resources:
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li><a href="https://www.sans.org/security-resources/" class="text-blue-500 hover:underline">SANS Security Resources</a></li>
+                            <li>SANS Poster: <a href="https://www.sans.org/posters/windows-security-log-cheat-sheet/" class="text-blue-500 hover:underline">Windows Security Log Cheat Sheet</a></li>
+                        </ul>
+                    </li>
+                    <li>Reference Microsoft's official documentation:
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li><a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-ids" class="text-blue-500 hover:underline">Windows Security Auditing Event IDs</a></li>
+                        </ul>
+                    </li>
+                    <li>Check <strong>13 cubed</strong> (a comprehensive Windows logging reference):
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li><a href="https://www.13cubed.com/downloads/windows_event_log.pdf" class="text-blue-500 hover:underline">Windows Event Log Reference PDF</a></li>
+                        </ul>
+                    </li>
+                    <li>For Sysmon events, refer to:
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon" class="text-blue-500 hover:underline">Sysmon Documentation</a></li>
+                            <li><a href="https://github.com/SwiftOnSecurity/sysmon-config" class="text-blue-500 hover:underline">SwiftOnSecurity Sysmon Config</a></li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3 class="text-xl font-medium text-gray-700 mt-6">Contribute To Event Lens</h3>
+                <div class="code-block p-4 rounded-lg mt-3">
+                    <pre class="text-sm text-gray-800 overflow-x-auto"><code>// To add new event IDs, extend these arrays in the events.js:
+const securityEvents = [
+    {id: 4624, title: "Successful Logon", description: "An account was successfully logged on.", severity: "low"},
+    // Add more events here
+];
+
+const sysmonEvents = [
+    {
+        id: 1,
+        title: "Process Creation",
+        description: "Fires when a process starts, capturing details like command line, and user.",
+        severity: "medium"
+    },
+    // Add more Sysmon events here
+];</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-search text-orange-500 mr-3"></i> SIEM Query Examples
+            </h2>
+            
+            <div class="prose max-w-none">
+                <h3 class="text-xl font-medium text-gray-700">Microsoft Sentinel (KQL)</h3>
+                <div class="code-block p-4 rounded-lg mt-3 mb-6">
+                    <pre class="text-sm text-gray-800 overflow-x-auto"><code>// Multiple high severity events
+SecurityEvent
+| where EventID in (4625, 4672, 4697, 4720, 4728, 4732, 4741, 4768)
+| summarize count() by EventID, Activity
+
+// Suspicious process creation patterns
+Sysmon
+| where EventID == 1
+| where ProcessCommandLine contains "powershell" or ProcessCommandLine contains "cmd"
+| where ProcessCommandLine contains "-nop" or ProcessCommandLine contains "-enc"</code></pre>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700">Splunk SPL</h3>
+                <div class="code-block p-4 rounded-lg mt-3 mb-6">
+                    <pre class="text-sm text-gray-800 overflow-x-auto"><code># Failed logons from multiple sources
+index=wineventlog EventCode=4625
+| stats count by src_ip, user
+| where count > 5
+
+# Sysmon process creation with suspicious parent processes
+index=wineventlog source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 
+| search ParentImage="*\\cmd.exe" OR ParentImage="*\\powershell.exe" 
+| table _time, host, user, Image, CommandLine, ParentImage</code></pre>
+                </div>
+
+                <h3 class="text-xl font-medium text-gray-700">ELK (Kibana)</h3>
+                <div class="code-block p-4 rounded-lg mt-3">
+                    <pre class="text-sm text-gray-800 overflow-x-auto"><code>// Account manipulation events
+event.code:(4720 OR 4728 OR 4732 OR 4741 OR 4742 OR 4767)
+AND event.module:security
+
+// Sysmon network connections to suspicious ports
+event.dataset:windows.sysmon AND event.code:3 
+AND (network.destination.port:(22 OR 4444 OR 5555 OR 6666 OR 7777 OR 8080) 
+OR destination.port:(>= 49152 AND <= 65535))</code></pre>
+                </div>
+
+                <div class="mt-6 p-4 pro-tip rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-2">Pro Tip:</h4>
+                    <p class="text-blue-700">When creating SIEM queries, always:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1 text-blue-700">
+                        <li>Filter by time range to improve your accuracy during Threat Hunting</li>
+                        <li>Include relevant fields in your output (timestamp, host, user, process, etc)</li>
+                        <li>Use field extraction where possible instead of raw text searches</li>
+                        <li>Consider adding thresholds to reduce noise (e.g., count > 5)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center text-gray-500 text-sm mt-12">
+            <p>Security Event Log Reference | Last updated: <span id="currentDate"></span></p>
+            <p class="mt-1">Made with ❤️ | cx48</p>
+        </footer>
+    </div>
+    <script src="events.js"></script>
+    <script src="main.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

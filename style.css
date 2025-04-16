@@ -1,0 +1,51 @@
+.log-card {
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.log-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.search-highlight {
+    background-color: #fef08a;
+}
+.copy-btn {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.log-card:hover .copy-btn {
+    opacity: 1;
+}
+.section-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.code-block {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+.pro-tip {
+    background-color: #f0f9ff;
+    border: 1px solid #e0f2fe;
+}
+.logon-type-card {
+    transition: all 0.2s ease;
+}
+.logon-type-card:hover {
+    background-color: #f8fafc;
+}
+.provider-tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-family: monospace;
+}

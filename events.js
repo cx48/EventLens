@@ -239,8 +239,6 @@ const systemEvents = [
                       description: "Remote Desktop Services session reconnected successfully.",
                       severity: "medium"
                   },
-
-                  // 100, 102: Task Scheduler
                   {
                       id: 100,
                       title: "Task Scheduler Started Task",
@@ -261,8 +259,6 @@ const systemEvents = [
                       description: "A Windows event log (System, Application, etc.) was cleared.",
                       severity: "high"
                   },
-
-                  // 106, 141: Task Scheduler
                   {
                       id: 106,
                       title: "New Scheduled Task Registered",
@@ -315,16 +311,12 @@ const systemEvents = [
                       description: "A service failed to start.",
                       severity: "medium"
                   },
-
-                  // 600: PowerShell
                   {
                       id: 600,
                       title: "PowerShell Provider Started",
                       description: "A PowerShell provider was started.",
                       severity: "low"
                   },
-
-                  // 601 (original entry, kept)
                   {
                       id: 601,
                       title: "Driver Failed to Load",
@@ -374,8 +366,6 @@ const systemEvents = [
                       description: "An application became unresponsive (hang).",
                       severity: "medium"
                   },
-
-                  // 1100 (original entry, kept)
                   {
                       id: 1100,
                       title: "Event Log Service Shutdown",

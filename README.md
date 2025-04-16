@@ -13,7 +13,7 @@ Event Lens provides a structured, searchable, and visually clean reference for c
 #### SIEM Queries (More can be added manually)
 ![SIEM](screenshots/siem-query-examples.png)
 
-#### More Learning Resources
+#### More Resources
 ![More Resources](screenshots/more-resources.png)
 
 ## Features
